@@ -1,0 +1,102 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Navigation */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .nav__logo img {
+    width: 100px;
+  }
+  
+  .nav__links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  .nav__links a {
+    color: #fff;
+    padding: 5px 10px;
+  }
+  
+  /* Sections */
+  .section__container {
+    padding: 50px 20px;
+  }
+  
+  .section__header {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .section__subheader {
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  /* Diet Table */
+  .diet__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .diet__table th,
+  .diet__table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .diet__table th {
+    background-color: #f4f4f4;
+  }
+  
+  /* Exercise Grid */
+  .exercise__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+  }
+  
+  .day__column {
+    background: #f4f4f4;
+    padding: 10px;
+  }
+  
+  .day__header {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .exercise__slot {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    text-align: center;
+  }
+  

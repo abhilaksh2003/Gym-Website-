@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Interactive Workout Planner | Fitclub</title>
+<style>
+/* Your existing CSS styles */
+</style>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .section__container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      color: #333;
+      text-align: center;
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      color: #555;
+    }
+    input, select, button {
+      display: block;
+      margin-top: 5px;
+      padding: 10px;
+      width: 100%;
+      max-width: 400px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #f90;
+      color: #fff;
+      cursor: pointer;
+    }
+    #routine, #musicList {
+      margin-top: 20px;
+    }
+    .music-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .music-item img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+    .music-item a {
+      text-decoration: none;
+      color: #333;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .footer__container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    .footer__col {
+      flex: 1 1 200px;
+      margin: 10px;
+    }
+    .footer__socials a {
+      margin: 0 5px;
+    }
+    .playlist__container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px; /* Adjust the width as needed */
+  background-color: #f2f2f2;
+  padding: 20px;
+  overflow-y: auto;
+}
+.playlist__title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.playlist__table {
+  width: 100%;
+}
+.playlist__table th,
+.playlist__table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+  </style>
+</head>
+<body>
+<nav class="sticky-nav">
+  <div class="nav__logo">
+    <a href="#"><img src="logo.png" alt="logo"></a>
+  </div>
+  <ul class="nav__links">
+    <li class="link"><a href="index.html">Home</a></li>
+    <li class="link"><a href="#">Program</a></li>
+    <li class="link"><a href="#">Service</a></li>
+    <li class="link"><a href="#">About</a></li>
+    <li class="link"><a href="#">Community</a></li>
+    <li class="link"><a href="#">Blog</a></li>
+    <li class="link"><a href="#">FAQ</a></li>
+    <li class="link"><a href="prime.html">Back</a></li>
+  </ul>
+  <button class="btn">Join Now</button>
+  <button class="btn">Prime Members</button>
+  
+
+</nav>
+
+<div class="section__container">
+  
+  <div class="section__container">
+    <h2>Interactive Workout Planner</h2>
+  
+    <!-- Exercise Selection -->
+    <label for="exercise">Select an exercise:</label>
+    <select id="exercise">
+      <option value="pushup">Pushup</option>
+      <option value="squat">Squat</option>
+      <option value="plank">Plank</option>
+    </select>
+  
+    <!-- Sets and Reps Input -->
+    <label for="sets">Sets:</label>
+    <input type="number" id="sets" value="3">
+    <label for="reps">Reps:</label>
+    <input type="number" id="reps" value="10">
+  
+    <!-- Generate Routine Button -->
+    <button onclick="generateRoutine()">Generate Routine</button>
+  
+    <!-- Generated Routine -->
+    <div id="routine"></div>
+  
+    <h2>Favorite Music</h2>
+  
+    <!-- Music Input -->
+    <label for="songTitle">Song Title:</label>
+    <input type="text" id="songTitle">
+    <label for="songLink">Song Link:</label>
+    <input type="text" id="songLink">
+    <label for="songImage">Song Image URL:</label>
+    <input type="text" id="songImage">
+  
+    <!-- Add Music Button -->
+    <button onclick="addMusic()">Add Music</button>
+  
+    <!-- Favorite Music List -->
+    <div id="musicList"></div>
+  </div>
+
+  <!-- Exercise Selection and Generate Routine Button -->
+  <!-- Your existing workout planner content -->
+
+  
+<button onclick="togglePlaylist()">Show Playlist</button> <!-- Button to toggle playlist -->
+</div>
+
+<!-- Playlist container -->
+<div class="playlist__container" id="playlistContainer" style="display: none;">
+  <h3 class="playlist__title">Favorite Music</h3>
+  <table class="playlist__table" id="musicTable">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Image</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody id="musicList">
+      <!-- Table rows will be added dynamically here -->
+    </tbody>
+  </table>
+</div>
+
+<footer class="section__container footer__container">
+  <div class="footer__col">
+    <div class="footer__logo"><img src="logo.png" alt="logo"></div>
+    <p>
+      Take the first step towards a healthier, stronger you with our
+      unbeatable pricing plans. Let's sweat, achieve, and conquer together!
+    </p>
+    <div class="footer__socials">
+      <a href="#"><i class="ri-facebook-fill"></i></a>
+      <a href="#"><i class="ri-instagram-line"></i></a>
+      <a href="#"><i class="ri-twitter-fill"></i></a>
+    </div>
+  </div>
+  <div class="footer__col">
+    <h4>Company</h4>
+    <a href="#">Business</a>
+    <a href="#">Franchise</a>
+    <a href="#">Partnership</a>
+    <a href="#">Network</a>
+  </div>
+  <div class="footer__col">
+    <h4>About Us</h4>
+    <a href="#">Blogs</a>
+    <a href="#">Security</a>
+    <a href="#">Careers</a>
+  </div>
+  <div class="footer__col">
+    <h4>Contact</h4>
+    <a href="#">Contact Us</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms & Conditions</a>
+    <a href="#">BMI Calculator</a>
+  </div>
+</footer>
+<div class="footer__bar">
+  Copyright © . All rights reserved.
+</div>
+<script src="js.js"></script>
+
+<script>
+function toggleMusicContainer() {
+  var container = document.getElementById('musicContainer');
+  if (container.style.display === 'none') {
+    container.style.display = 'block';
+  } else {
+    container.style.display = 'none';
+  }
+}
+
+function togglePlaylist() {
+  var container = document.getElementById('playlistContainer');
+  if (container.style.display === 'none') {
+    container.style.display = 'block';
+  } else {
+    container.style.display = 'none';
+  }
+}
+</script>
+
+
+</body>
+</html>

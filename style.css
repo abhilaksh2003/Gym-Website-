@@ -1,0 +1,209 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Navigation */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .nav__logo img {
+    width: 100px;
+  }
+  
+  .nav__links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  .nav__links a {
+    color: #fff;
+    padding: 5px 10px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    background-color: #f90;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    background: #f4f4f4;
+  }
+  
+  .header__content {
+    max-width: 50%;
+  }
+  
+  .header__content h1 span {
+    color: #f90;
+  }
+  
+  .header__image img {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* Sections */
+  .section__container {
+    padding: 50px 20px;
+  }
+  
+  .section__header {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .section__subheader {
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  /* Explore Section */
+  .explore__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .explore__card {
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .explore__card h4 {
+    margin-top: 10px;
+  }
+  
+  .explore__card p {
+    margin: 10px 0;
+  }
+  
+  /* Class Section */
+  .class__image {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .class__image img {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .class__content {
+    max-width: 50%;
+  }
+  
+  /* Pricing Section */
+  .price__grid {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .price__card {
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .price__card h3 {
+    margin: 10px 0;
+  }
+  
+  .price__card p {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .price__card i {
+    margin-right: 10px;
+  }
+  
+  /* Review Section */
+  .review {
+    background: #f4f4f4;
+    padding: 50px 20px;
+  }
+  
+  .review__content {
+    text-align: center;
+  }
+  
+  .review__rating {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 20px 0;
+  }
+  
+  .review__member {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .review__member img {
+    width: 50px;
+    border-radius: 50%;
+  }
+  
+  /* Footer */
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 20px;
+    background: #333;
+    color: #fff;
+  }
+  
+  .footer__col {
+    flex: 1;
+  }
+  
+  .footer__col h4 {
+    margin-bottom: 10px;
+  }
+  
+  .footer__col a {
+    display: block;
+    margin: 5px 0;
+  }
+  
+  .footer__socials {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .footer__bar {
+    text-align: center;
+    padding: 10px 20px;
+    background: #222;
+    color: #fff;
+  }
+  
